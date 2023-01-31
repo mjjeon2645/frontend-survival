@@ -1,8 +1,9 @@
 ‌# Table of contents
 
-## 주차별 키워드 노트
+* [⭐️ Main](/week1/main.md)
 
-* [1주차 프론트엔드 개발 환경](/week1/main.md)
+## 주차별 키워드 정리 및 강의노트
+* [😀 1주차 프론트엔드 개발 환경](/week1/main.md)
     * [개발 환경](/week1/development-environment.md)
     * [TypeScript](/week1/type-script.md)
     * [React](/week1/react.md)
