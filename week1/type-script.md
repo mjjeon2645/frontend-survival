@@ -36,9 +36,29 @@ category = 'food';
 
 ## 키워드 정리
 
-- REPL
-- TypeScript
-    - Interface vs Type
-    - 타입 추론
-    - Union Type vs Intersection Type
-    - Optional Parameter
+### REPL
+- Read - Eval - Print Loop
+- 사용자가 특정 코드를 입력하면 그 코드를 평가하고 실행 결과를 출력하는 것을 반복하는 환경. -> simple!
+- Node.js에서도 REPL 환경을 지원하며 터미널에서 node를 입력해 엔터를 치면 바로 REPL 환경으로 진입 가능
+
+### TypeScript
+1. Interface vs Type
+- 아샬님은 강의에서 타입을 더 선호하신다는 기억이 나는데. 우선 두개 다 익숙해지는 것을 먼저 목표로.
+
+2. 타입 추론
+- 동적 타이핑 언어인 자바스크립트에서 전형적으로 볼 수 있음. `const number = 'a';`라고 할 때, number라는 identifier가 숫자라는 의미임에도 불구하고 믄자열 a가 할당되었기 때문에 자바스크립트는 number를 string으로 추론함
+- 자바스크립트에서 숫자 1과 문자 1을 더했을 때 예상치 못했던 답이 나오는 이유가 타입 추론과 관련있음
+- 타입스크립트 역시 자바스크립트의 슈퍼셋이기 때문에 타입을 명시하지 않더라도 추론하여 작동
+
+3. Union Type vs Intersection Type
+- Union은 합집합
+- Union은 `|`로 구분하며 OR 연산자와 비슷한 역할. 
+
+- Intersection은 교집합
+- Intersection은 `&`로 구분하며 AND 연산자와 비슷. 
+
+- [참고. 카카오 엔터 FE기술블로그](https://fe-developers.kakaoent.com/2022/221124-typescript-tip/)
+
+4. Optional Parameter
+- 함수 선언 시에 반드시(필수로) 주어지지 않아도 되는 파라미터가 있을 경우 `parameterName?: type` 과 같이 '?'를 사용하여 옵셔널로 지정 가능. 
+- 위 경우에는 파라미터에 인자를 전달하지 않아도 가능
