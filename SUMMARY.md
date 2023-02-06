@@ -9,3 +9,8 @@
     * [React](/week1/react.md)
     * [Testing Library](/week1/testing-library.md)
     * [Parcel & ESLint](/week1/parcel-eslint.md)
+* [😀 2주차 JSX](/week2/main.md)
+    * [JSX](/week2/jsx.md)
+    * [React Element](/week2/react-element.md)
+    * [Virtual DOM](/week2/virtual-dom.md)
+    
