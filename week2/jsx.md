@@ -108,5 +108,5 @@ React.createElement(
 
 ### Syntactic sugar
 - 더 쉽게 읽거나 표현할 수 있도록 설계된 프로그래밍 언어 내의 구문
-- 예. 자바스크립트의 `for...of` loop은 for룹과 동일한 기능! -> 자바에서의 for문도 enhance for loop으로 변경 가능할 떄가 있는데 이 역시 syntactic sugar로 이해할 수 있을까?
+- 예. 자바스크립트의 `for...of` loop은 for룹과 동일한 기능! -> 자바에서의 for문도 enhance for loop으로 변경 가능할 때가 있는데 이 역시 syntactic sugar로 이해할 수 있을까?
 - descructuring
