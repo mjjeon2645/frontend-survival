@@ -48,7 +48,7 @@ React.createElement(Greeting, { name: "world" });
 
 - Greeting은 사실 function임. p와 같이 태그가 아닌 function인데 그 자체로 전달이 되었음 -> 이를 통해 JS에서는 function, 즉 함수가 고차함수. 1급 객체로 취급된다는 사실을 알 수 있음(function 그 자체를 object 취급하여 return 하거나 또는 다른 함수의 인자로 제공할 수 있음)
 
--  **궁금한 점.** createElement의 2번째 인자가 비어있을 땐 null을 줬는데, 3번째 인자가 비어있어 보이는데 여기서는 null을 안주고 그냥 비운채로 끝내버리네? -> Greeting 자체가 함수라서 태그로 감싼 text-node가 없기 때문인가? 여튼 굳이 써주지는 않는가보다..
+- **궁금한 점.** createElement의 2번째 인자가 비어있을 땐 null을 줬는데, 3번째 인자가 비어있어 보이는데 여기서는 null을 안주고 그냥 비운채로 끝내버리네? -> Greeting 자체가 함수라서 태그로 감싼 text-node가 없기 때문인가? 여튼 굳이 써주지는 않는가보다..
 
 - example 1에서 속성 자리가 null이었던 것과는 달리 이번에는 name 속성에 world가 있으므로 해당 자리가 채워짐. 눈여겨 볼 것은 해당 자리에는 객체(key-value)가 들어옴. 속성이 여러개일 경우 객체 안에 key-value가 콤마로 구분되어 늘어남
 
@@ -104,7 +104,10 @@ React.createElement(
 ## 키워드 정리
 
 ### React에서 JSX를 사용하는 목적
-- 
+- JSX를 사용하지 않고 자바스크립트 코드로도 작성할 수 있음. JSX는 문법적 확장이기 떄문에 일정 변환 절차를 거쳐 자바스크립트 코드로 1:1 대응을 시킬 수 있기 때문
+- 공식문서에서는 UI가 어떻게 생겨야 하는지를 설명하기 위해 리액트와 사용할 것을 권장하고 있음
+- 대체로 JS 코드로 UI 작업을 할 떄보다 JSX로 작업할 떄 시각적으로 더 도움이 된다고 함
+- 또한 반복적으로 React.createElement() 호출을 하지 않아도 됨
 
 ### Syntactic sugar
 - 더 쉽게 읽거나 표현할 수 있도록 설계된 프로그래밍 언어 내의 구문
