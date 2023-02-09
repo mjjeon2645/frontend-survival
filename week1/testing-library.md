@@ -20,19 +20,26 @@ expect(screen.queryByText(/Hi/)).not.toBeVisible();
 ## 키워드 정리
 
 ### Jest
+
 - Jest란? 한 마디로 자바스크립트 테스트 프레임워크
 - 페이스북에서 만듦!
 - 홈페이지 상에서는 babel, TS, node, React, Angular, Vue 등으로 만든 프로젝트에서 사용할 수 있다고 함
 
+</br>
+
 ### Describe-Context-It 패턴
+
 - 테스트를 계층 구조로 만들어서 테스트의 실행 흐름을 추후에 쉽게 확인할 수 있다. 마치 애플리케이션의 설명서처럼.
 - `jest --verbose` 명령어로 계층구조의 테스트 문맥을 확인할 수 있음
 - describe: 설명할 테스트의 대상(예. 함수명)을 명시함
 - context: 테스트할 대상의 상황을 설명(when, 또는 with로 시작하기를 추천)
 - it: 행동을 설명
 
+</br>
+
 ### React Testing Library
-- RTLairbnb의 Enzyme의 대안으로 자리잡았다고 함.
-- `@testing-library` family of packages helps you **test UI components in a user-centric way.**[인트로덕션 발췌](https://testing-library.com/docs/) 
+
+- airbnb의 Enzyme의 대안으로 자리잡았다고 함.
+- `@testing-library` family of packages helps you **test UI components in a user-centric way.** [인트로덕션 발췌](https://testing-library.com/docs/) 
 - (나도 혼동되는 부분이었는데) React Testing Library는 Jest와 함께 React 내에서 테스트를 진행하므로 상호 보완관계라고 볼 수 있으며 엄밀하게는 RTL이 Jest를 포함하는 구조
-- [참고링크](https://tecoble.techcourse.co.kr/post/2021-10-22-react-testing-library/)
+- [참고링크. 테코블 블로그 글](https://tecoble.techcourse.co.kr/post/2021-10-22-react-testing-library/)
