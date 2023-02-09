@@ -23,12 +23,16 @@ React.createElement(component, props, ...children)
 
 - 해당 호출을 통해 react element를 생성할 수 있음 -> React Element 트리를 갱신하는 데 쓸 수 있음
 
+</br>
+
 ### React Element
 
 - React 애플리케이션을 구성하는 블록이라고 볼 수 있음
 - 컴포넌트라는 개념과는 혼동하기 쉽지만 구분해야 함!
 - 엘리먼트는 화면에 보이는 것들을 기술하며, React Element는 변경되지 않음
 - 또한 일반적으로 엘리먼트는 직접 사용되지 않고 컴포넌트로부터 반환됨
+
+</br>
 
 ### React StrictMode
 
