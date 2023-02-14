@@ -13,3 +13,6 @@
     * [JSX](/week2/jsx.md)
     * [React Element](/week2/react-element.md)
     * [Virtual DOM](/week2/virtual-dom.md)
+* [3주차 React로 사고하기](/week3/main.md)
+    * [React Component](/week3/react-component.md)
+    * [React State](/week3/react-state.md)
