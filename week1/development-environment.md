@@ -115,6 +115,11 @@ By default "node_modules" folder is ignored by transformers.
 - 자바스크립트로 브라우저 밖에서 서버를 구축하는 등 코드를 실행할 수 있게 해 주는 런타임 환경
 - 안정성을 보장하고 싶을 경우 LTS(Long Term Support) 버전을 사용하는 것이 적절함
 
+- [from MDN 문서](https://developer.mozilla.org/ko/docs/Learn/Server-side/Express_Nodejs/Introduction). 개발자가 모든 종류의 서버사이드 도구들과 어플리케이션을 JS로 만들수 있도록 해주는 런타임 환경. 또한 브라우저 영역 밖에서도 사용할 수 있도록 했음
+- 장점들이 있는데, 먼저 순수 자바스크립트로 작성되기 때문에 각각 브라우저, 웹 서버 코드를 작성할 때 언어들 사이 context shift를 다루는 시간을 줄일 수 있다. -> 예를들어, 클라이언트 사이드를 JS로 작성하고 서버 사이드를 Java로 작성한다면 context shift를 할 때 아무래도 에너지가 소요될 수 밖에 없지 않을까?
+- 노드 패키지 매니저(NPM)가 재사용 가능한 수천만개의 패키지에 접근할 수 있도록 돕는다.
+- 개발 생태계, 커뮤니티가 왕성하고 크다.
+
 </br>
 
 ### NPM(Node Package Manager)
