@@ -96,7 +96,7 @@ export default function CheckBoxField({ label } : CheckBoxFieldProps) {
 
 ## 키워드 정리
 
-### REST API와 GraphQL
+### [REST API와 GraphQL](#rest-api와-graphql)
 
 1. REST API란 무엇인가
 
