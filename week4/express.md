@@ -9,6 +9,7 @@
 
 ### ts-node와 nodemon
 
+- 개발시 ts-node를 사용하면 좋은 점 중 하나는 node 실행 시 ts 코드들을 별도로 노드로 컴파일을 한버 더 해줭야 하는데, 이 과정이 필요하지 않으므로 편리
 - ts-node를 사용해서 컴파일할 때 코드를 수정하면 자동으로 반영되지 않음. -> **궁금한 점. 그럼 parcel은 왜 자동으로, 실시간으로 반영이 되었을까? 편하긴 servor는 어땠었지?
 - 코드 뿐만 아니라 숨김파일이 아닌 파일들(ex. package.json)에서 발생하는 변동사항도 monitoring하기 때문에 서버가 자동으로 restart 됨
 - 새로고침을 하면 변동사항을 반영해 줌
@@ -20,6 +21,27 @@
 ```
 
 - express는 백엔드를 mocking해서 테스트를 진행해야 할 때, 백엔드 개발자와 소통할 때 활용할 수 있음
+
+- 강의에서 예시로 나온 코드에 대한 간단한 해석
+
+```javascript
+// 1. express 함수를 가져온다.
+import express from 'express';
+
+const port = 3000;
+
+// 2. express 함수를 실행하여 app이라는 인스턴스를 만든다.
+const app = express();
+
+// 3. 인스턴스에서 내가 하고시픈 것을 실제로 적용한다.
+app.get('/', (request, response), => {
+    response.send('Hello, world!');
+});
+
+app.listen(port, () => {
+    console.log(`Server running at http://locahost:${port}`);
+});
+```
 
 </br>
 
@@ -102,7 +124,7 @@
 
 ### REST API
 
-- [REST API 정리본 from week3](../week3/react-component.md/#rest-api와-graphql)
+- [REST API 정리본 업데이트 from week3](../week3/react-component.md/#rest-api-graphql)
 
 </br>
 
