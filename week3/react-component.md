@@ -96,12 +96,61 @@ export default function CheckBoxField({ label } : CheckBoxFieldProps) {
 
 ## 키워드 정리
 
-### REST API와 GraphQL
+### [REST API와 GraphQL](#rest-api-graphql)
 
 1. REST API란 무엇인가
 
 - REST(Representational State Transfer)란 2000년도에 로이 필딩 박사의 논문에서 최초로 소개되었고, 웹 설계의 우수성에 비해 제대로 사용되지 못하는 모습에 안타까워 하며 웹의 장점을 최대한 활용할 수 있는 아키텍처로써 발표되었다. 로이필딩 논문에서는 어떠한 제약조건도 없는 Null Style에 제약조건들을 점진적으로 추가해나가면서 REST를 설명하고 있다.
-- REST API란 '두 컴퓨터 시스템이 인터넷을 통해 정보를 안전하게 교환하기 위해 사용하는 인터페이스'이다.
+- [from deview-그런 REST API로 괜찮은가](https://www.youtube.com/watch?v=RP_f5dMoHFc)
+    - REST API란? REST 아키텍쳐 스타일을 따르는 API
+    - 그럼 REST는? 분산 하이퍼미디어 시스템(예. 웹)을 위한 아키텍쳐 스타일
+    - 그럼 아키텍쳐 스타일이란? 제약조건의 집합!. 결국 로이 필딩이 말한 모든 제약조건을 지켜야만 REST 아키텍쳐를 따른다고 말할 수 있음
+    - REST를 구성하는 스타일(REST는 그 자체로 아키텍쳐 스타일이면서 동시에 아키텍쳐 스타일의 집합. -> 그래서 하이브리드 아키텍쳐라고도 함)
+        - client-server
+        - stateless
+        - cache
+        - uniform interface
+        - layered system
+        - code-on-demand(optional) -> 서버에서 코드를 클라이언트로 보내서 실행할 수 있어야 한다! -> 자바스크립트를 의미하는 것.
+    - HTTP 프로토콜만 잘 지켜도 대체로 위 스타일 6개 중 client-server, stateless, cache, layerd system 정도는 만족시킨다. code-on-demand는 옵셔널. 하지만 가장 잘 지켜지지 못하는 것이 바로 `uniform interface`
+    - uniform interface의 4가지 제약조건 중 [2가지](./react-component.md/#uniform-interface)가 지켜지지 못하고 있음
+        - self-descriptive message. 즉 메시지는 스스로를 설명해야 한다.
+        - HATEOAS. 애플리케이션의 상태는 Hyperlink를 이용해 전이되어야 한다.한가?
+
+    - 그럼 왜 uniform interface가 필요???? => 바로 '독립적인 진화'를 하기 위해서 => 서버와 클라이언트가 각각 독립적으로 진화 => 서버의 기능이 변경되어도 클라이언트를 업데이트 할 필요가 없는!!
+    - 그럼 이 REST를 잘 지키는 예시는? 바로 '웹' 웹 페이지를 변경했다고 웹 브라우저를 업데이트 할 필요도, 그 반대의 필요도 없음. HTTP 명세나 HTML 명세가 변경되어도 웹은 잘 동작함.
+    - 상호 운용성(interoperability)에 대한 집착
+        - 업데이트 하나 마음대로 하지 못함. 왜냐하면 지금 잘 돌아가고 있는 웹 세계를 깨뜨릴 수 없기 떄문에. 로이필딩의 REST도 이 고민에서 나왔음
+        - 예. Referer 오타지만 안고침. charset 잘못 지은 이름이지만 안 고침
+
+    - 그럼 결론적으로 REST가 웹의 독립적인 진화에 도움을 주었는가? 강연자는 YES!로 봄
+        - HTTP에 지속적으로 영향을 줌
+        - Host 헤더 추가
+        - 길이 제한을 다루는 방법이 명시(414 URI Too Long 등)
+        - URI에서 리소스의 정의가 추상적으로 변경됨: '식별하고자 하는 무언가'
+        - 기타 HTTP와 URI에 많은 영향을 줌 -> 실제로 HTTP/1.1 명세 최신판에는 REST에 대한 언급이 들어감
+    
+    - **로이필딩의 정의**. 하이퍼텍스트를 포함한 self-descriptive한 메시지의 uniform interface를 통해 리소스에 접근하는 API.
+    - 어쨌든 로이필딩 님은 제약조건을 제대로 지키지 못한다면 제발 REST 라는 단어좀 쓰지 말라고 하니...  
+  
+    - REST API를 만들어보자. 일단 왜 API는 REST가 잘 안되는지 일반적인 웹과 비교해보기.  
+| | 흔한  웹 페이지 | HTTP API |
+| Protocol | HTTP | HTTP |
+| 커뮤니케이션 | 사람 - 기계 | **기계-기계** |
+| Media Type | HTML | ***JSON***|
+  
+- 결국 커뮤니케이션의 주체, 미디어타입의 차이로 인해 발생하는 것이라고 추측해볼 수 있겠다. HTML, JSON을 잠시 비교해보면.  
+| | HTML | JSON |
+| Hyperlink | 됨(a 태그 등) | 정의되어 있지 않음 |
+| Self-descriptive | 됨(HTML 명세) | 불완전* |
+  
+- *불완전하다는 의미는 문법 해석은 가능하나, 의미를 해석하려면(예. 그 안에 들어간 키가 어떤 의미인지, 밸류가 어떤 의미인지는 규정되어 있지 않음) 별도 문서가(API 문서) 필요하다.  
+  
+- 그렇다면 REST를 따르기 위해 Self-descriptive, HATEOAS를 만족시킬 수 있는 방법은 없을까?
+    - custom media type, profile link relation 등으로 해결
+    - HATEOAS는 HTTP 헤더나 본문에 linkㄹ르 담아 만족시킬 수 있음
+  
+- '두 컴퓨터 시스템이 인터넷을 통해 정보를 안전하게 교환하기 위해 사용하는 인터페이스'이다.
     - API란? 다른 소프트웨어 시스템과 통신하기 위해 따라야 하는 규칙을 정의
 - REST 특징([참고링크](https://m.blog.naver.com/aservmz/222234406469))
     - Client-Server 구조
@@ -122,7 +171,7 @@ export default function CheckBoxField({ label } : CheckBoxFieldProps) {
         - 이 제약조건의 장점은 클라이언트-서버의 일부 interaction을 부분적으로나 완전히 제거할 수 있어 효율성, 확장성을 높일 수 있고 사용자interaction에 대한 평균 지연시간을 감소시켜 사용자가 느끼는 퍼포먼스를 향상시킬 수 있다.
         - 다만 여기에도 trade-off는 존재하는데 신뢰성이 저하될 수 있다. 캐시 내 데이터가 오래되어(stale) 서버의 데이터와 크게 다를 수 있기 때문
     - 하단부터는 현대의 웹 아키텍처 형태로 확장하기 위해 추가되는 스타일, 즉 제약조건들
-    - Uniform Interface
+    - [Uniform Interface](#uniform-interface)
         - REST 아키텍쳐 스타일이 다른 네트워크 기반의 스타일과 구분되는 핵심적인 특징은 컴포넌트들 간의 __uniform interface__ 이다.
         - Uniform-Client-Cache-Stateless-Server
         - 컴포넌트 인터페이스에 소프트웨어 공학 원칙인 generality(일반성)을 적용하여 전체적인 시스템 아키텍쳐를 단순화하고 interacion의 가시성을 높인다.
@@ -130,10 +179,10 @@ export default function CheckBoxField({ label } : CheckBoxFieldProps) {
         - trade-off 역시 존재하는데, 효율성이 저하된다. 애플리케이션에 필요한 특정 정보가 전달되는 것이 아닌 표준화된 상태로 변환되어 전달되어야 하기 때문이다. 
         - REST interface는 일반적인 웹에 최적화된 대규모 하이퍼미디어 데이터를 효과적으로 전송하기 위해 디자인되었으며, 다른 형태의 interaction에 최적화된 것은 아니다.
         - uniform interface를 얻기 위해서는 컴포넌트 동작 방식에 대한 다양한 아키텍처 제약조건이 필요하다. REST는 아래 4가지 제약조건에 의해 정의된다.
-            - identification of resources
-            - manipulation of resources through representations
+            - identification of resources -> 리소스가 URI로 식별되면 된다(잘 지켜지는 편)
+            - manipulation of resources through representations -> representation 전송을 통하여 리소스를 조작해야 한다는 의미. 리소스를 만들거나, 삭제하거나, 수정할 때 HTTP 메시지에 표현을 담아 전송하여 그 목적을 달성하면 됨(이것 역시 잘 지켜지는 편)
             - self-descriptive messages
-            - hypermedia as the engine of application state
+            - hypermedia as the engine of application state(HATEOAS)
     - Layered System
         - Internet-scale 요구사항에 대한 동작을 향상시키기 위해 layered system 제약사항을 추가한다.
         - Uniform-Layered-Client-Cahce-Stateless-Server
@@ -144,7 +193,7 @@ export default function CheckBoxField({ label } : CheckBoxFieldProps) {
     - Code-On-Demand
         - 마지막 추가 제약조건은 code-on-demand 스타일이다. REST는 applet이나 스크립트 형태의 코드를 다운로드, 또는 실행할 수 있게 하여 클라이언트 기능을 확장시키도록 한다. 이는 클라이언트가 사전에 구현해야 할 특징들을 감소함으로서 클라이언트를 단순화할 수 있다. 또한 배포 후에 features(기능? 속성? 특징? 요구사항?)를 다운로드할 수 있게 하여 시스템의 확장성을 높인다.
         - 하지만 가시성을 감소시키므로 이는 REST의 선택적 제약조건이다.
-
+  
 2. GraphQL은 왜 등장했는가?
 
 - GraphQL이란
@@ -152,7 +201,7 @@ export default function CheckBoxField({ label } : CheckBoxFieldProps) {
     - [참고. 카카오테크](https://tech.kakao.com/2019/08/01/graphql-basic/)
         - 페이스북에서 만든 쿼리 언어임. SQL(Structed Query Language)와 마찬가지. 하지만 gql과 sql의 언어적 구조 차이나 사용되는 방식의 차이도 매우 큼.
         - sql의 목적은 데이터베이스 시스템에 저장된 데이터를 효율적으로 가져오는 것이라면, __gql은 웹 클라이언트가 데이터를 서버로부터 효율적으로 가져오는 것이 목적__ => 당연히 gql의 문장을 주로 클라이언트 시스템에서 작성하고 호출할 것이다.
-
+  
 3. REST API vs GraphQL
 
 - 복잡한 view 하나를 그릴 때 여러번 API를 호출하고, 호출을 통해 받아온 데이터를 조합하여 사용해야 한다. 페이지가 복잡해질수록 호출 횟수가 많아질 수밖에 없으며 데이터 조합의 복잡도 역시 높아질 것이다. REST API의 경우 기존에 서버에서 정의한 데이터 구조만을 요청 한 번에 하나씩 가져올 수 있을 것이다. 반면 쿼리문을 통해서는 view에서 필요한 모든 데이터를 한번에 조합하여 가져올 수 있을 것이다. 이 말인 즉슨 불필요한 데이터 역시 딸려오지 않을 수 있다는 것과 같지 않을까.
