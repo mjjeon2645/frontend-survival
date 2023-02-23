@@ -135,12 +135,14 @@ export default function CheckBoxField({ label } : CheckBoxFieldProps) {
   
     - REST API를 만들어보자. 일단 왜 API는 REST가 잘 안되는지 일반적인 웹과 비교해보기.  
 | | 흔한  웹 페이지 | HTTP API |
+|---|---|---|
 | Protocol | HTTP | HTTP |
 | 커뮤니케이션 | 사람 - 기계 | **기계-기계** |
 | Media Type | HTML | ***JSON***|
   
 - 결국 커뮤니케이션의 주체, 미디어타입의 차이로 인해 발생하는 것이라고 추측해볼 수 있겠다. HTML, JSON을 잠시 비교해보면.  
 | | HTML | JSON |
+|---|---|---|
 | Hyperlink | 됨(a 태그 등) | 정의되어 있지 않음 |
 | Self-descriptive | 됨(HTML 명세) | 불완전* |
   
