@@ -19,4 +19,4 @@
 
 ### Hook의 규칙
 
-- [react-hook이란 바로가기](./react-hook.md/#react-hook이란)
+- [react-hook이란 바로가기](./react-hook.md/#react-hook)

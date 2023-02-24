@@ -64,7 +64,7 @@ useEffect(() => {
 
 ## 키워드 정리
 
-### [React Hook이란](#react-hook이란)
+### [React Hook이란](#react-hook)
 
 - Hook은 React 16.8부터 새로 도입된 요소로 기존 Class 바탕의 코드 작성 필요 없이 상태값과 여러 리액트 기능을 사용할 수 있음
 - hook은 리액트 컨셉을 대체하는 것이 아니라 props, state, context, refs, lifecycle과 같은 리액트 개념에 좀 더 직관적인 API를 제공하는 것
