@@ -66,7 +66,19 @@ useEffect(() => {
 
 ### React Hook이란
 
-- 
+- Hook은 React 16.8부터 새로 도입된 요소로 기존 Class 바탕의 코드 작성 필요 없이 상태값과 여러 리액트 기능을 사용할 수 있음
+- hook은 리액트 컨셉을 대체하는 것이 아니라 props, state, context, refs, lifecycle과 같은 리액트 개념에 좀 더 직관적인 API를 제공하는 것
+- hook을 사용하면 컴포넌트로부터 상태 관련 로직을 추상화할 수 있어 독립적인 테스트가 가능하고 컴포넌트 재사용이 가능. 결론적으로 **hook은 계층 변화 없이 상태 관련 로직을 재사용할 수 있도록 도움**
+- 또한 hook을 통해 class 없이 react 기능들을 사용할 수 있음
+- hook을 사용할 때는 아래 사용 규칙을 지켜야 함
+    - 최상위(at the top level)에서만 hook을 호출해야 함. 반복문, 조건문, 중첩된 함수 내에서 hook을 실행하지 말 것
+        - 이유: 이 규칙을 따라야 컴포넌트가 렌더링 될 때마다 항상 동일한 순서로 hook이 호출되는 것이 보장됨. 또한 useState, useEffect가 여러번 호출되는 중에도 hook의 상태를 올바르게 유지할 수 있음
+    - react 함수 컴포넌트 내에서만 hook을 호출해야 함(일반 JS 함수에서 hook 호출 X). 다만 custom hook 내에서는 hook 호출 가능
+        - 이유: 이 규칙을 지킬 때 모든 상태 관련 로직을 소스코드에서 명확하게 보이도록 할 수 있음
+
+- 참고
+    - [리액트 공식문서: hook의 개요](https://ko.reactjs.org/docs/hooks-intro.html)
+    - [리액트 공식문서: hook의 규칙](https://ko.reactjs.org/docs/hooks-rules.html)
 
 </br>
 
@@ -74,7 +86,10 @@ useEffect(() => {
 
 1. useState
 
+- test
+
 2. useEffect
+- test
 
 3. useContext
 
