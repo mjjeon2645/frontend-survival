@@ -64,7 +64,7 @@ useEffect(() => {
 
 ## 키워드 정리
 
-### React Hook이란
+### [React Hook이란](#react-hook이란)
 
 - Hook은 React 16.8부터 새로 도입된 요소로 기존 Class 바탕의 코드 작성 필요 없이 상태값과 여러 리액트 기능을 사용할 수 있음
 - hook은 리액트 컨셉을 대체하는 것이 아니라 props, state, context, refs, lifecycle과 같은 리액트 개념에 좀 더 직관적인 API를 제공하는 것
@@ -142,7 +142,7 @@ const value = useContext(SomeContext);
     - [useContext 공식문서 베타버전](https://beta.reactjs.org/reference/react/useContext)
     - [Passing Data Deeply with Context](https://beta.reactjs.org/learn/passing-data-deeply-with-context)
 
-#### 4. useRef
+#### [4. useRef](#4-useref)
 
 - useRef는 `.current` 프로퍼티로 전달된 인자(initialValue)로 초기화된 변경 가능한 ref 객체를 반환한다. 반환된 객체는 컴포넌트의 전 생애주기를 통해 유지되는데, 본질적으로 useRef는 .current 프로퍼티에 변경 가능한 값을 담고 있는 '상자'와 같다. 
     - `ref`는 컴포넌트가 특정 정보를 '기억'하게는 하지만 해당 정보가 새로운 렌더링을 트리거하지 않도록 할 때 사용한다. (참고. [referencing values with Refs](https://beta.reactjs.org/learn/referencing-values-with-refs))
