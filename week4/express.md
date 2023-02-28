@@ -33,7 +33,7 @@ const port = 3000;
 // 2. express 함수를 실행하여 app이라는 인스턴스를 만든다.
 const app = express();
 
-// 3. 인스턴스에서 내가 하고시픈 것을 실제로 적용한다.
+// 3. 인스턴스에서 내가 하고싶은 것을 실제로 적용한다.
 app.get('/', (request, response), => {
     response.send('Hello, world!');
 });
