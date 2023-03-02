@@ -37,10 +37,38 @@ afterEach(() => server.restHandlers());
 
 ### Service worker
 
+#### MDN 출처: 정의와 특징
+
+- 웹 응용 프로그램, 브라우저, (사용 가능한 경우) 네트워크 사이의 **프록시 서버 역할**을 한다.
+- 출처(origin)와 경로에 대해 등록e된 event-driven 워커이며 JavaScript 파일 형태이다.
+- 연관된 웹 페이지/사이트를 통제해 탐색, 리소스 요청을 가로채 수정하고, 리소스를 매우 세분화된 방식으로 캐싱한다. 이를 통해 웹 앱이 어떤 상황에서 어떻게 동작해야 하는지를 완벽히 바꿀 수 있다. (대표적 상황으로 네트워크를 사용하지 못할 때임)  
+**** 잘 모르겠다. 찾아볼것 -> 왜 캐싱인가? 왜 service worker가 캐싱하는지? 이제까지의 경험으로는 이게 왜 캐싱역할을 하는건지 이해가 안됨
+- 워커 컨텍스트에서 실행되기 때문에 DOM 접근이 불가하다. 
+- 서비스 워커는 비동기적으로 설계됐고, 이로 인해 동기적 XHR이나 웹 저장소 등의 API를 서비스 워커 내에서 사용 불가
+- 보안상의 이유로 HTTPS에서만 동작함. 중간자 공격에 의한 악성 코드 삽입에 취약하기 때문
+  
+- 개발 의도: 효과적인 오프라인 경험을 생성, 네트워크 요청을 가로채서 네트워크 사용 가능 여부에 따라 적절한 조치를 취하고 서버의 asset을 업데이트 하기 위함. 또한 푸시 알림과 백그라운드 동기화 API에 대한 액세스도 허용
+
+#### 서비스 워커의 위치
+
+- 카카오 엔터 내용 보고 정리해보기
+
+#### 서비스 워커의 생명주기
+
+- 카카오 엔터 내용 보고 정리해보기
+
+- 참고
+    - [MDN Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+    - [카카오엔터 FE 블로그 - 서비스 워커에 대해 알아보고 Mock Response 만들기](https://fe-developers.kakaoent.com/2022/221208-service-worker/)
+
 </br>
 
 ### MSW(Mock Service Worker)
 
+- 브라우저와 node에서 사용할 수 있는 API mocking library. 서버향의 네트워크 요청을 가로채어 모의 응답(Mocked response)을 보내주는 역할을 함. MSW 라이브러리를 통하면 Mock 서ㅓㅂ
+
 </br>
 
 ### polyfill(폴리필)
+
+- 
