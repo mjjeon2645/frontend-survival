@@ -65,10 +65,18 @@ afterEach(() => server.restHandlers());
 
 ### MSW(Mock Service Worker)
 
-- 브라우저와 node에서 사용할 수 있는 API mocking library. 서버향의 네트워크 요청을 가로채어 모의 응답(Mocked response)을 보내주는 역할을 함. MSW 라이브러리를 통하면 Mock 서ㅓㅂ
+- 브라우저와 node에서 사용할 수 있는 API mocking library. 서버향의 네트워크 요청을 가로채어 모의 응답(Mocked response)을 보내주는 역할
+
+- 참고하기
+    - [MSW Introduction](https://mswjs.io/docs/)
 
 </br>
 
 ### polyfill(폴리필)
 
-- 
+- 기본적으로 지원하지 안흔 이전 브라우저에서 최신 기능을 제공하는 데 필요한 코드(일반적으로 웹의 자바스크립트)
+- 변경된 표준을 준수할 수 있도록 기존 함수의 동작 방식을 수정하거나, 새롭게 구현한 함수의 스크립트를 폴리필이라고 부름. 폴리필(poly`fill`)은 말 그대로 구현이 누락된 새로운 기능을 메꿔주는(fill in) 역할
+
+- 참고하기
+    - [MDN polyfill 용어설명](https://developer.mozilla.org/ko/docs/Glossary/Polyfill)
+    - [모던자바스크립트 폴리필](https://ko.javascript.info/polyfills)
