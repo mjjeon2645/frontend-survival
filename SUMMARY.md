@@ -32,3 +32,8 @@
     * [TSyringe](/week6/tsyringe.md)
     * [Redux 따라하기](/week6/copy-redux.md)
     * [usestore-ts](/week6/usestore-ts.md)
+* [7주차 React Router](/week7/main.md)
+    * [Routing](/week7/routing.md)
+    * [Routes](/week7/routes.md)
+    * [Router](/week7/router.md)
+    * [Navigation](/week7/navigation.md)
