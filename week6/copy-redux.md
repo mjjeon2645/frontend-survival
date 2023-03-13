@@ -4,7 +4,9 @@
 
 - dispatch, selector 등을 이용하며, selector를 통해 상태를 얻을 수 있음.
 - 예. dispatch에 액션이라는 객체를 던져줌. `dispatch({ type: 'increase' })`
+- action은 타입과 payload를 가짐
 - action creator를 사용하면 `dispatch(increase());`
+- reducer는 원래 있던 state를 받고 action을 받는다. 그러면 새로운 state를 리턴한다.
 
 ---
 
