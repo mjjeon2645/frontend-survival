@@ -17,7 +17,7 @@
 - 모든 라우터 객체가 이 컴포넌트로 전달되어 앱을 렌더링하고, 나머지 API를 활성시킴
 - 용례
 
-```ts
+```javascript
 import {
   createBrowserRouter,
   RouterProvider,

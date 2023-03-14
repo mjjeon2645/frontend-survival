@@ -42,7 +42,7 @@ npm i react-router-dom
 - <BrowserRouter>는 clean URL을 사용한(?) 브라우저의 주소바의 현재 위치를 저장하고, 브라우저에 내장된 히스토리 스택을 이용해 navigate 한다.
 - 타입은 아래와 같음
 
-```ts
+```typescript
 declare function BrowserRouter(
   props: BrowserRouterProps
 ): React.ReactElement;
@@ -56,7 +56,7 @@ interface BrowserRouterProps {
 
 - 사용 형태는 아래와 같음
 
-```ts
+```javascript
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
@@ -76,7 +76,7 @@ root.render(
 경로 중첩을 통해 복잡한 앱 레이어와 데이터 종속승을 단순하고 선언적으로 만들 수 있다.
 - 타입은 아래와 같다.
 
-```ts
+```typescript
 interface RouteObject {
   path?: string;
   index?: boolean;
@@ -100,11 +100,11 @@ interface RouteObject {
 
 #### Memory Router
 
-- <MemoryRouter>는 내부적으로 '배열'에 위치를 저장한다. 테스트와 같이 히스토리 스택을 완벽하게 제어해야 하는 시나리오에 이상적이다.
+- `<MemoryRouter>`는 내부적으로 '배열'에 위치를 저장한다. 테스트와 같이 히스토리 스택을 완벽하게 제어해야 하는 시나리오에 이상적이다.
     - `<MemoryRouter initialEntries>`의 기본값은 ["/"]이다. (루트 '/' URL에 있는 단일 항목)
 - 용례
 
-```ts
+```javascript
 import * as React from "react";
 import { create } from "react-test-renderer";
 import {
@@ -132,7 +132,7 @@ describe("My app", () => {
 
 - 타입
 
-```ts
+```javascript
 declare function MemoryRouter(
   props: MemoryRouterProps
 ): React.ReactElement;
