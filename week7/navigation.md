@@ -22,7 +22,7 @@
     - `History.replaceState()`: 세션 기록 스택의 제일 최근 항목을 주어진 데이터, 지정한 제목 및 URL로 대체
 - 용례
 
-```ts
+```javascript
 window.onpopstate = function(event) {
   alert(`location: ${document.location}, state: ${JSON.stringify(event.state)}`)
 }
@@ -45,10 +45,10 @@ history.go(2)  // alerts "location: http://example.com/example.html?page=3, stat
 
 #### NavLink
 
-- 활성(active) 또는 대기(pending) 여부를 알 수 있는 특별한 종류의 <Link>. 현재 선택된 탭을 표시하려는 경우나 탭 집합과 같은 탐색 메뉴를 만들 때 유용하며 화면 리더와 같은 보조기술에 유용한 컨텍스트를 제공한다.
+- 활성(active) 또는 대기(pending) 여부를 알 수 있는 특별한 종류의 `<Link>`. 현재 선택된 탭을 표시하려는 경우나 탭 집합과 같은 탐색 메뉴를 만들 때 유용하며 화면 리더와 같은 보조기술에 유용한 컨텍스트를 제공한다.
 - 용례
 
-```js
+```javascript
 import { NavLink } from "react-router-dom";
 
 <NavLink
@@ -65,10 +65,10 @@ import { NavLink } from "react-router-dom";
 
 #### Link
 
-- 사용자가 클릭하거나 탭 할 때 다른 페이지로 이동할 수 있게 해 준다. 'react-router-dom'에서 <Link>는 링크하는 리소스를 가리키는 실제 href가 있는 접근 가능한 <a> 엘리먼트를 렌더링한다. <Link>를 마우스 오른쪽 버튼으로 클릭하는 것과 같은 동작이 작동한다.
+- 사용자가 클릭하거나 탭 할 때 다른 페이지로 이동할 수 있게 해 준다. 'react-router-dom'에서 `<Link>`는 링크하는 리소스를 가리키는 실제 href가 있는 접근 가능한 `<a>` 엘리먼트를 렌더링한다. `<Link>`를 마우스 오른쪽 버튼으로 클릭하는 것과 같은 동작이 작동한다.
 - 타입
 
-```ts
+```javascript
 declare function Link(props: LinkProps): React.ReactElement;
 
 interface LinkProps
@@ -94,7 +94,7 @@ type To = string | Partial<Path>;
 - 렌더링 될 때 현재 위치를 변경한다. `useNavigate`를 둘러싸는 컴포넌트 래퍼임
 - 타입 선언
 
-```ts
+```javascript
 declare function Navigate(props: NavigateProps): null;
 
 interface NavigateProps {
@@ -107,7 +107,7 @@ interface NavigateProps {
 
 - 용례
 
-```js
+```javascript
 import * as React from "react";
 import { Navigate } from "react-router-dom";
 

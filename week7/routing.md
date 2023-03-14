@@ -12,7 +12,7 @@
 
 ** 잘 모르겠는 것 1. record가 뭐임..?
 
-```ts
+```typescript
 const pages: Record<string, React.FC> = {
   '/': HomePage,
   '/about': AboutPage,
@@ -22,11 +22,11 @@ const pages: Record<string, React.FC> = {
 -> [from 공식문서](https://developer.mozilla.org/ko/docs/Web/API/Window/location)
 - 타입의 프로퍼티 키의 집합으로 타입을 생성. 이 유틸리티는 타입의 프로퍼티를 다른 타입에 매핑시키는 데 사용될 수 있음
 
-```ts
+```typescript
 Record<Keys, Type>
 ```
 
-```ts
+```typescript
 interface PageInfo {
   title: string;
 }
@@ -45,7 +45,7 @@ const nav: Record<Page, PageInfo>
 
 ** 잘 모르겠는 것 2. reflect는 뭐임..
 
-```ts
+```typescript
 const Page = Reflect.get(pages, path) || HomePage;
 ```
 
@@ -65,8 +65,8 @@ const Page = Reflect.get(pages, path) || HomePage;
 - HTML DOM API에 포함된 기능 영역은 아래와 같다.
   - DOM을 통한 HTML 요소 액세스 및 제어
   - form data 액세스 및 조작
-  - 2D 이미지의 컨텐츠와 HTML <canvas>의 컨텍스트와 상호작용(예. 이미지 위에 그리기)
-  - HTML 미디어 요소(<audio>, <video>)에 연결된 미디어 관리
+  - 2D 이미지의 컨텐츠와 HTML `<canvas>`의 컨텍스트와 상호작용(예. 이미지 위에 그리기)
+  - HTML 미디어 요소(`<audio>`, `<video>`)에 연결된 미디어 관리
   - 웹페이지에서의 컨텐츠 드래그 앤 드롭
   - 웹 컴포넌트, 웹 스토리지, 웹 워커, 웹소켓, 서버 전송 이벤트와 같은 기타 API에 대한 지원, 연결 인터페이스
 
@@ -79,7 +79,7 @@ const Page = Reflect.get(pages, path) || HomePage;
 - Location 인터페이스에 변경을 가하면 연결된 객체에도 반영되는데 Document, Window 인터페이스가 이런 Location을 갖고 있으며 각각 `Document.location`, `Window.location`으로 접근 가능함
 - 속성에 대한 예제
 
-```js
+```javascript
 // location: https://developer.mozilla.org:8080/en-US/search?q=URL#search-results-close-container
 const loc = document.location;
 console.log(loc.href); // https://developer.mozilla.org:8080/en-US/search?q=URL#search-results-close-container
@@ -105,7 +105,7 @@ location.assign("http://another.site"); // load another page
 
 - Location 인터페이서의 pathname 속성은 위치의 URL 경로가 포함된 문자열로, 경로가 없는 경우 비어있다. 하지만 그렇지 않다면 경로명에는 쿼리 문자열, fragment를 포함하지 않고 '/' 뒤에 URL의 path 가 포함
 
-```js
+```javascript
 // Let's say an <a id="myAnchor" href="/en-US/docs/Location.pathname"> element is in the document
 const anchor = document.getElementById("myAnchor");
 const result = anchor.pathname; // Returns:'/en-US/docs/Location.pathname'
