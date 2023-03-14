@@ -13,3 +13,40 @@
 ## 키워드 정리
 
 ### ReactRouter - RouterProvider
+
+- 모든 라우터 객체가 이 컴포넌트로 전달되어 앱을 렌더링하고, 나머지 API를 활성시킴
+- 용례
+
+```ts
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider
+    router={router}
+    fallbackElement={<BigSpinner />}
+  />
+);
+```
+
+- 참고
+    - [react router - router provider](https://reactrouter.com/en/main/routers/router-provider)
