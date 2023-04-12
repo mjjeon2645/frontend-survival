@@ -49,3 +49,4 @@
     * [로그인](/week10/login.md)
     * [로그아웃](/week10/logout.md)
     * [회원가입](/week10/signup.md)
+    * [주문 목록&주문 상세](/week10/order.md)
