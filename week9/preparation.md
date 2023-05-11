@@ -45,21 +45,21 @@ declare module 'styled-components' {
 // 기본 형태는 아래와 같음
 
 const routes = [
-    {
-        element: <Layout />,
-        children: [
-            { path: '/', element: <HomePage /> },
-            // ...
-        ],
-    },
+  {
+    element: <Layout />,
+    children: [
+        { path: '/', element: <HomePage /> },
+        // ...
+    ],
+  },
 ];
 
 export default routes;
 ```
 
 - Layout을 만들어주기
-    - 궁금했던 점. 왜 Layout은 components 폴더에 들어가있을까? 레이아웃이 정말 컴포넌트일까? -> main.tsx에 들어가는 요소도 아닌데...
-    - Layout을 감싸는 container의 CSS 속성 잘 살펴보기. 
+  - 궁금했던 점. 왜 Layout은 components 폴더에 들어가있을까? 레이아웃이 정말 컴포넌트일까? -> main.tsx에 들어가는 요소도 아닌데...
+  - Layout을 감싸는 container의 CSS 속성 잘 살펴보기. 
 
 - 강의를 두 번 들으니 fixtures 폴더의 강력함을 알게된 것 같다. 단순히 따라 치기만 했을 때는 몰랐는데 fixtures 폴더 내에 index를 만들어주고 index에서 활용하는 각각의 mock data를 파일로 만들어주면 추후에 변경사항이 생겼을 때에도 변경이 용이하고, 특히 fixtures.products, fixtures.cart와 같은 네임스페이스를 사용하면서 real data와의 혼란을 줄여준다.
 
